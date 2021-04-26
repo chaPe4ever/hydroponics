@@ -1,15 +1,17 @@
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:hydroponics/assets/custom_theme_data.dart';
+import 'package:hydroponics/core/base_controller.dart';
 import 'package:hydroponics/globals.dart';
 
 import 'models/vegetable.dart';
 
-class PlantGrowSelectController extends GetxController {
+class PlantGrowSelectController extends GetxController with BaseController {
   final _hamburgerIconActive = false.obs;
   final _filteredVegetableList = <Vegetable>[].obs;
   @override
-  void onInit() {
+  void onInit() async {
+    isBusy = true;
     _filteredVegetableList.addAll([
       Vegetable(
         title: 'Tomato',
@@ -76,6 +78,8 @@ class PlantGrowSelectController extends GetxController {
       ),
     ]);
     super.onInit();
+    await Future.delayed(Duration.zero);
+    isBusy = false;
   }
 
   bool get hamburgerIconActive => _hamburgerIconActive.value;

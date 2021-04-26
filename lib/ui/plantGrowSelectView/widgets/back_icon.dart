@@ -17,7 +17,9 @@ class BackIcon extends StatelessWidget {
                 color: Colors.white,
                 size: Get.theme.iconTheme.size,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Get.back();
+              },
             ),
             // widthFactor: 10.0,
           ),

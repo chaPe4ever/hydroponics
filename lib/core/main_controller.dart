@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
+import 'package:hydroponics/core/base_controller.dart';
 
-class MainController extends GetxController {
+class MainController extends GetxController with BaseController {
   final _capacityLvlLines = <bool>[].obs;
 
   final _remainingCapacity = 250.obs;

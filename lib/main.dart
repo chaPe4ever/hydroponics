@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:hydroponics/ui/bottom_nav_view/bottom_navigation_view.dart';
 
 import 'assets/custom_theme_data.dart';
 import 'page_router.dart';
-import 'ui/main_view.dart';
+import 'ui/main_view/main_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +19,7 @@ void main() {
       initialBinding: PageRouter.initialBinding,
       title: 'Hydroponics',
       theme: customThemeData,
-      initialRoute: MainView.route,
+      initialRoute: BottomNavigationView.route,
       getPages: PageRouter.getPages,
       debugShowCheckedModeBanner: false,
     ),
